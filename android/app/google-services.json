@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "206985965949",
+    "firebase_url": "https://local-commodities.firebaseio.com",
+    "project_id": "local-commodities",
+    "storage_bucket": "local-commodities.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206985965949:android:f637f97acaf9e78c9e1c14",
+        "android_client_info": {
+          "package_name": "com.theblankteamcovid19.local_commodities"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "206985965949-m1ctf7gau637e789883thecktm9cuns2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.theblankteamcovid19.local_commodities",
+            "certificate_hash": "2121a25c6b94f819eb56805c1ab3ca1f148ddfc0"
+          }
+        },
+        {
+          "client_id": "206985965949-tgcoseesoh3dvvbti797553tiau79qtu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAv2T7G8MBcDOXYCS3tgP7G4tWcSm-DYh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "206985965949-tgcoseesoh3dvvbti797553tiau79qtu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
