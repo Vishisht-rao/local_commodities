@@ -1,9 +1,27 @@
 class User {
 
   final String uid;
+
+  User({this.uid});
+
+}
+
+class UserDataUserType {
+
+  final String uid;
+  final String name;
+  final String userType;
+
+  UserDataUserType({this.uid,this.name,this.userType});
+
+}
+
+class UserData {
+
+  final String uid;
+  final String name;
+  final String userType;
   final String address;
-  final String type;
 
-  User({this.uid,this.address,this.type});
-
+  UserData({this.uid,this.name,this.userType,this.address});
 }

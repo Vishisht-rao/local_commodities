@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:local_commodities/models/user.dart';
 import 'package:local_commodities/services/auth.dart';
 import 'package:local_commodities/shared/constants.dart';
 import 'package:local_commodities/shared/loading.dart';
+import 'package:local_commodities/services/database.dart';
 
 class Register extends StatefulWidget {
 
@@ -14,9 +16,13 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
 
+final List<String> userType = ['Customer','Store Owner','Delivery Executive'];
 final AuthService _auth = AuthService();
 final _formKey = GlobalKey<FormState>();
 bool loading = false;
+
+String _currentUserType;
+String _currentName;
 
 //text field state
   String email = '';
@@ -25,6 +31,7 @@ bool loading = false;
 
   @override
   Widget build(BuildContext context) {
+
     return loading ? Loading() : Scaffold(
       backgroundColor: Colors.red[100],
       appBar: AppBar(
@@ -49,6 +56,12 @@ bool loading = false;
               children: <Widget>[
                 SizedBox(height: 20.0),
                 TextFormField(
+                  decoration: textInputDecoration.copyWith(hintText: 'Name'),
+                  validator: (val) => val.isEmpty ? 'Enter your name' : null,
+                  onChanged: (val) => setState(() => _currentName = val),
+                ),
+                SizedBox(height: 20.0),
+                TextFormField(
                   decoration: textInputDecoration.copyWith(hintText: 'Email'),
                   validator: (val) => val.isEmpty ? 'Enter an email' : null,
                   onChanged: (val) {
@@ -65,6 +78,18 @@ bool loading = false;
                   }
                 ),
                 SizedBox(height: 20.0),
+                DropdownButtonFormField(
+                value: userType[0],
+                decoration: textInputDecoration,
+                items: userType.map((type) {
+                  return DropdownMenuItem(
+                    value: type,
+                    child: Text('$type'),
+                  );
+                }).toList(),
+                onChanged: (val) => setState(() => _currentUserType = val ),
+              ),
+                SizedBox(height: 20.0),
                 RaisedButton(
                   color: Colors.pink[400],
                   child: Text(
@@ -75,6 +100,10 @@ bool loading = false;
                     if (_formKey.currentState.validate()) {
                       setState(() => loading = true);
                       dynamic result = await _auth.registerWithEmailAndPassword(email,password);
+                      await DatabaseService(uid: result.uid).addUserTypeandName(
+                      _currentUserType ?? userType[0],
+                      _currentName,
+                    );
                       if (result == null) {
                         setState(() {
                            error = 'Invalid email or account already exists';
