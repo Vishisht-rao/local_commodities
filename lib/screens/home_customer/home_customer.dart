@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:local_commodities/screens/services/auth.dart';
+import 'package:local_commodities/services/auth.dart';
 
 class HomeCustomer extends StatelessWidget {
 

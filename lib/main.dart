@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:local_commodities/models/user.dart';
-import 'package:local_commodities/screens/services/auth.dart';
+import 'package:local_commodities/services/auth.dart';
 import 'package:local_commodities/screens/wrapper.dart';
 import 'package:provider/provider.dart';
 
