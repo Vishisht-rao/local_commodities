@@ -7,29 +7,34 @@ import 'package:provider/provider.dart';
 import 'package:local_commodities/models/user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+String userType;
+
 class Wrapper extends StatelessWidget {
 
   final CollectionReference users = Firestore.instance.collection('users');
-  String userType;
+  //final String userType = '';
 
   @override
   Widget build(BuildContext context) {
 
     final user = Provider.of<User>(context);
 
-    users.getDocuments().then((querySnapshot){
-      querySnapshot.documents.forEach((result){
-        /*if (result.documentID == user.uid) {
-          userType = result.data['Type'];
-        }*/
-      print(result.documentID);
-      print(user.uid);
-      });
-    });
-    //print(userType);
+      users.getDocuments().then((querySnapshot){
+        querySnapshot.documents.forEach((result){
+          if (result.documentID == user.uid) {
+            print(result.documentID);
+            print(user.uid);
+            print(result.data['Type']);
+            userType = result.data['Type'];
+          }
+        });
+     });
+    
+
+    print(userType);
     
     //returns either a home or authenticate widget
-    /*if (user==null) {
+    if (userType==null) {
       return Authenticate();
     } else if (userType=='Customer') {
       return HomeCustomer();
@@ -39,8 +44,8 @@ class Wrapper extends StatelessWidget {
     }
     else {
       return HomeDelivery();
-    }*/
-
+    }
+    
   }
 }
 

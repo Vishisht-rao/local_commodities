@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './item.dart';
+import 'package:local_commodities/screens/home_delivery/item.dart';
 
 void main() => runApp(MyApp());
 

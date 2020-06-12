@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:local_commodities/models/user.dart';
 import 'package:local_commodities/services/auth.dart';
 import 'package:local_commodities/shared/constants.dart';
 import 'package:local_commodities/shared/loading.dart';
