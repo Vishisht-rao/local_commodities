@@ -50,7 +50,7 @@ class CartModel {
   final String image;
   final String brand;
   final String name;
-  final int price;
+  final double price;
 
   CartModel({
     @required this.image,

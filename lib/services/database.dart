@@ -65,7 +65,7 @@ class DatabaseService {
     return snapshot.documents.map((doc){
       return CartModel(
         image: doc.data['Image'] ,
-        brand: doc.data['Brand']  ,
+        brand: doc.data['Brand'] ?? null ,
         name: doc.data['Name']  ,
         price: doc.data['Price']
     );

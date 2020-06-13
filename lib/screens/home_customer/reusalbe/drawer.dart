@@ -21,7 +21,7 @@ class DrawerMenu extends StatelessWidget {
                     color: Colors.brown[400],
                   ),
                   child: Text(
-                    'store name',
+                    store.name,
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 24,
@@ -44,7 +44,7 @@ class DrawerMenu extends StatelessWidget {
                 ),
                 ListTile(
                   leading: Icon(Icons.settings),
-                  title: Text('cart'),
+                  title: Text('Cart'),
                   onTap: () {
                     return Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Cart(store: store)));
                   },

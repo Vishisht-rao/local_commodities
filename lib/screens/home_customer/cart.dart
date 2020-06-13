@@ -39,8 +39,10 @@ class _CartState extends State<Cart> {
               backgroundColor: Colors.brown[400],
               elevation: 20,
               titleSpacing: 80,
-              title: Text(widget.store.name),
+              title: Text(widget.store.name + ' - Cart'),
               actions: <Widget>[
+                Padding(
+                padding:EdgeInsets.fromLTRB(5, 5, 5, 5),),
               ]
             ),
             SliverList(
@@ -51,7 +53,7 @@ class _CartState extends State<Cart> {
                   //print(items[index]);
                   return CartTile(cart: products[index],store: widget.store);
                 },
-                childCount: products.length
+                childCount:products.length
             ),
             )
           ],
