@@ -33,6 +33,7 @@ class _CategoriesState extends State<Categories> {
         drawer: Drawer(
            child: DrawerMenu() 
         ),
+        bottomNavigationBar: BottomBar(),
       ),
     );
   }

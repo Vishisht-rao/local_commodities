@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:local_commodities/models/store.dart';
 import 'package:local_commodities/screens/home_customer/reusalbe/drawer.dart';
+import 'package:local_commodities/screens/home_customer/reusalbe/bottomnavbar.dart';
 import 'package:local_commodities/screens/home_delivery/checkout_pop_up.dart';
 import 'package:provider/provider.dart';
 import 'package:local_commodities/models/item.dart';
@@ -61,6 +62,7 @@ class _CartState extends State<Cart> {
         drawer: Drawer(
             child:DrawerMenu()
         ),
+        bottomNavigationBar: BottomBar(),
       ),
     ),
     );
