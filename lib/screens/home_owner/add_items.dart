@@ -62,7 +62,7 @@ class _AddItemsFormState extends State<AddItemsForm> {
                 ),
                 onPressed: () async {
                   if(_formKey.currentState.validate()) {
-                    await DatabaseService(uid: user.uid).addItemData(
+                    await DatabaseService(uid: DatabaseService(uid: user.uid).getName()).addItemData(
                       _currentName,
                       _currentPrice,
                       _currentType,

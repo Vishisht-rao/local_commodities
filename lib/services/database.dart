@@ -10,8 +10,20 @@ class DatabaseService {
 
   //collection reference
   final CollectionReference users = Firestore.instance.collection('users');
-  final CollectionReference stores = Firestore.instance.collection('stores');
-  final CollectionReference oldStores = Firestore.instance.collection('Stores');
+  //final CollectionReference stores = Firestore.instance.collection('stores');
+  final CollectionReference stores = Firestore.instance.collection('Stores');
+   
+
+  String getName() {
+    if (uid=='8a7zoAUV4Ncj7JHLmbGQqZnbqua2') return 'Store7';
+    else if (uid=='Ffkds1paC0YgdlgymjKNF1pFTG92') return 'Store5';
+    else if (uid=='Ld7Bocl6Q8VO3FyONwH7010ewHA2') return 'Store4';
+    else if (uid=='ThMRoqUyCjh8qRomEzfhCIyDbWf1') return 'Store1';
+    else if (uid=='h871KZrsCPeFrfrRAGi6aDcWZuh1') return 'Store2';
+    else if (uid=='qC3J4J1knsVjzjwouQ5c8YqhpXw1') return 'Store3';
+    else if (uid=='sGwRR2DhTVczhE5z1NUGpYep0x42') return 'Store6';
+    else if (uid=='x8CWi0qVhrc7qKscbZX7eZkeBib2') return 'Store8';
+  }
 
   Future addUserTypeandName(String userType, String name) async {
     return await users.document(uid).setData({
@@ -21,7 +33,7 @@ class DatabaseService {
   }
 
   Future addStoreInfo(String name,String address,String imageLoc) async {
-    return await stores.document(uid).setData({
+    return await stores.document(getName()).setData({
       'Name': name,
       'Address': address,
       'Image': imageLoc,
@@ -29,7 +41,7 @@ class DatabaseService {
   }
 
   Future addItemData(String name, String price, String type) async {
-    return await stores.document(uid).collection('Items').document(name).setData({  
+    return await stores.document(getName()).collection('Items').document(name).setData({  
     'Name': name,
     'Image': name + '.jpg',
     'Price': price,
@@ -40,17 +52,6 @@ class DatabaseService {
     });
   }
 
-  Future addAllItems(String name,double price, int type, String imageLoc, int counter, int qtyType, double spPrice) async {
-    return await stores.document(uid).collection('Items').document(name).setData({
-     'Name': name,
-    'Image': imageLoc,
-    'Price': price,
-    'Type': type,
-    'counter': counter,
-    'qty_type': qtyType,
-    'sp_price': spPrice, 
-    });
-  }
 
   //stores list from snapshot
   List<Store> _storesListFromSnapshot(QuerySnapshot snapshot) {
@@ -79,7 +80,7 @@ class DatabaseService {
   }
 
   Stream<Store> get store {
-    return stores.document(uid).snapshots()
+    return stores.document(getName()).snapshots()
     .map(_storeFromSnapshot);
   }
 
@@ -90,25 +91,6 @@ class DatabaseService {
   Stream<UserType> get userType {
     return users.document(uid).snapshots()
     .map(_userTypeFromSnapshot);
-  }
-
-  List<AllItems> _getAllItemsFromSnapshot(QuerySnapshot snapshot) {
-    return snapshot.documents.map((doc){
-    return AllItems(
-      name: doc.data['Name'],
-      imageLoc: doc.data['Image'],
-      price: doc.data['Price'],
-      type: doc.data['Type'],
-      counter: doc.data['counter'],
-      qtyType: doc.data['qty_type'],
-      spPrice: doc.data['sp_price'],
-    );
-    }).toList();
-  }
-
-  Stream<List<AllItems>> get allItems {
-    return oldStores.document('Store1').collection('Items').snapshots()
-    .map(_getAllItemsFromSnapshot);
   }
 
 } 

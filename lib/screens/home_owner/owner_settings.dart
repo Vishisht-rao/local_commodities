@@ -60,10 +60,10 @@ class _SettingsFormState extends State<SettingsForm> {
                 ),
                 onPressed: () async {
                   if(_formKey.currentState.validate()) {
-                    await DatabaseService(uid: user.uid).addStoreInfo(
+                    await DatabaseService(uid: DatabaseService(uid: user.uid).getName()).addStoreInfo(
                       _currentName ?? store.name,
                       _currentAddress ?? store.address,
-                      store.imageLoc,
+                      DatabaseService(uid: user.uid).getName() + '.jpg',
                     );
                     Navigator.pop(context);
                   }
