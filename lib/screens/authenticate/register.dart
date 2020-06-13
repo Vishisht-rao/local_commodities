@@ -6,7 +6,7 @@ import 'package:local_commodities/services/database.dart';
 
 class Register extends StatefulWidget {
 
-  final Function toggleView;
+  final Function toggleView; 
   Register({ this.toggleView });
 
   @override

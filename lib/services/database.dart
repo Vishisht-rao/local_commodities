@@ -15,4 +15,31 @@ class DatabaseService {
       'Name' : name,
     });
   }
-}
+
+  UserType _userTypeFromSnapshot(DocumentSnapshot snapshot) {
+    return UserType(userType: snapshot.data['Type']);
+  }
+
+  Stream<UserType> get userType {
+    return users.document(uid).snapshots()
+    .map(_userTypeFromSnapshot);
+  }
+
+} 
+
+
+/*
+users.getDocuments().then((querySnapshot){
+        querySnapshot.documents.forEach((result){
+          if (result.documentID == user.uid) {
+            print(result.documentID);
+            print(user.uid);
+            print(result.data['Type']);
+            userType = result.data['Type'];
+          }
+        });
+     });
+    
+
+    print(userType);
+    */

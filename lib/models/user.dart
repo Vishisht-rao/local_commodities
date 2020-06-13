@@ -24,4 +24,13 @@ class UserData {
   final String address;
 
   UserData({this.uid,this.name,this.userType,this.address});
+} 
+
+class UserType {
+
+  final String userType;
+
+  UserType({this.userType});
+
+
 }
