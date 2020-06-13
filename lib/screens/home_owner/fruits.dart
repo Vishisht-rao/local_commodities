@@ -1,17 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:local_commodities/screens/home_delivery/item.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Fresh Fruits',
-      home: MyHomePage(),
-    );
-  }
-}
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -102,14 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Fresh Fruits',),
-        backgroundColor: Colors.lightGreen,
-        centerTitle: true,
-      ),
-      body: SingleChildScrollView(
-              child: Column(
+    return Column(
           //mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Column(
@@ -161,8 +143,6 @@ class _MyHomePageState extends State<MyHomePage> {
               }).toList(),
             ),
           ],
-        ),
-      ),
-    );
+      );     
   }
 }

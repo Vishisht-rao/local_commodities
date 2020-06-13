@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:local_commodities/models/store.dart';
 import 'package:local_commodities/services/auth.dart';
-import 'package:local_commodities/screens/home_customer/reusalbe/search.dart';
-import 'package:local_commodities/screens/home_customer/reusalbe/drawer.dart';
-import 'package:local_commodities/screens/home_customer/reusalbe/bottomnavbar.dart';
+
 import 'package:local_commodities/services/database.dart';
 import 'package:provider/provider.dart';
 import 'package:local_commodities/screens/home_customer/stores_list.dart';

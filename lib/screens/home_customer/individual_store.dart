@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:local_commodities/screens/home_delivery/checkout_pop_up.dart';
 import 'package:local_commodities/services/auth.dart';
 import 'package:local_commodities/screens/home_customer/reusalbe/search.dart';
 import 'package:local_commodities/screens/home_customer/reusalbe/drawer.dart';
-import 'package:local_commodities/screens/home_customer/reusalbe/bottomnavbar.dart';
+import 'package:local_commodities/screens/home_owner/fruits.dart';
 
 class IndStore extends StatefulWidget {
   IndStore({Key key}) : super(key: key);
@@ -63,6 +64,14 @@ class _IndStoreState extends State<IndStore> {
               )
               ],
             ),
+            SliverList(
+            delegate: SliverChildBuilderDelegate(
+                    (context, index) {
+                  return MyHomePage();
+                },
+                childCount:products.length
+            ),
+            )
           ],
         ),
       ),
