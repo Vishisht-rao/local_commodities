@@ -12,6 +12,7 @@ class DatabaseService {
   final CollectionReference users = Firestore.instance.collection('users');
   //final CollectionReference stores = Firestore.instance.collection('stores');
   final CollectionReference stores = Firestore.instance.collection('Stores');
+  final CollectionReference cart = Firestore.instance.collection('Cart');
    
 
   String getName() {
@@ -49,6 +50,14 @@ class DatabaseService {
     'counter': 0,
     'qty_type': 3,
     'sp_price': 0,
+    });
+  }
+
+  Future addToCart(String name, double price, String image) async {
+    return await cart.document(uid).collection('Items').document(name).setData({
+      'Name': name,
+      'Price': price,
+      'Image': image,
     });
   }
 
