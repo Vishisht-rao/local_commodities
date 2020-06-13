@@ -13,14 +13,19 @@ class StoreTile extends StatelessWidget {
       padding: EdgeInsets.only(top: 8.0),
       child: Card(
         margin: EdgeInsets.fromLTRB(20.0,6.0,20.0,0.0),
-        child: ListTile(
-          leading: CircleAvatar(
-            radius: 25.0,
-            backgroundColor: Colors.brown[400],
-            backgroundImage: AssetImage(store.imageLoc),
+        child: GestureDetector(
+            onTap: () {
+              return Navigator.of(context).push(MaterialPageRoute(builder: (context) => IndStore()));
+            },
+            child: ListTile(
+            leading: CircleAvatar(
+              radius: 25.0,
+              backgroundColor: Colors.brown[400],
+              backgroundImage: AssetImage(store.imageLoc),
+            ),
+            title: Text(store.name),
+            subtitle: Text(store.address),
           ),
-          title: Text(store.name),
-          subtitle: Text(store.address),
         )
       ),
     ); 
