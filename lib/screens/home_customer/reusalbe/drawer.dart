@@ -46,7 +46,7 @@ class DrawerMenu extends StatelessWidget {
                   leading: Icon(Icons.settings),
                   title: Text('Cart'),
                   onTap: () {
-                    return Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Cart(store: store)));
+                    return Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Cart()));
                   },
                 ),
                 ListTile(

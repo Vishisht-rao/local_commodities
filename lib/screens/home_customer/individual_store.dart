@@ -30,7 +30,7 @@ class _IndStoreState extends State<IndStore> {
       value: DatabaseService(uid: widget.store.id).items,
     child: SafeArea(
           child: Scaffold(
-        drawer: Drawer(child: DrawerMenu(store: widget.store)), 
+        drawer: Drawer(child: DrawerMenu()), 
         body:CustomScrollView(
           physics: AlwaysScrollableScrollPhysics(),
           slivers: <Widget>[
@@ -88,7 +88,7 @@ class _IndStoreState extends State<IndStore> {
             )
           ],
         ),
-        bottomNavigationBar: BottomBar(),
+        bottomNavigationBar: BottomBar(store: widget.store),
       ),
     ),
     );

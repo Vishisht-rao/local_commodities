@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:local_commodities/screens/home_customer/cart.dart';
 import 'package:local_commodities/screens/home_customer/categories.dart';
 import 'package:local_commodities/screens/home_customer/individual_store.dart';
+import 'package:local_commodities/models/store.dart';
 
 class BottomBar extends StatefulWidget {
+
+  final Store store;
+  BottomBar({this.store});
   @override
   _BottomBarState createState() => _BottomBarState();
 }
@@ -34,7 +38,7 @@ class _BottomBarState extends State<BottomBar> {
             return Navigator.of(context).push(MaterialPageRoute(builder: (context) => Categories()));
           }
           if (currentindex==2){
-            return Navigator.of(context).push(MaterialPageRoute(builder: (context) => Cart()));       
+            return Navigator.of(context).push(MaterialPageRoute(builder: (context) => Cart(store: widget.store)));       
           }
           },
     );
