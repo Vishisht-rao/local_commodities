@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:local_commodities/models/store.dart';
+import 'package:local_commodities/screens/home_customer/reusalbe/bottomnavbar.dart';
 import 'package:local_commodities/screens/home_customer/individual_store.dart';
 
 class StoreTile extends StatelessWidget {
