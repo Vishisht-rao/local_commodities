@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:local_commodities/screens/home_owner/edit_items.dart';
 import 'package:local_commodities/services/auth.dart';
 import 'package:local_commodities/screens/home_owner/owner_settings.dart';
 import 'package:local_commodities/screens/home_owner/add_items.dart';
