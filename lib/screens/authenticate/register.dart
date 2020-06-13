@@ -103,6 +103,9 @@ String _currentName;
                       _currentUserType ?? userType[0],
                       _currentName,
                     );
+                    if(_currentUserType == 'Store Owner') {
+                      await DatabaseService(uid: result.uid).addStoreInfo('store_name', 'store_address', result.uid);
+                    }
                       if (result == null) {
                         setState(() {
                            error = 'Invalid email or account already exists';
