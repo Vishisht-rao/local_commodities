@@ -32,7 +32,7 @@ class _BottomBarState extends State<BottomBar> {
         onTap: (index) {
           setState(() {currentindex = index;});
           if (currentindex==0){
-            return Navigator.of(context).push(MaterialPageRoute(builder: (context) => IndStore()));
+            return Navigator.of(context).push(MaterialPageRoute(builder: (context) => IndStore(store: widget.store)));
           }
           if (currentindex==1){
             return Navigator.of(context).push(MaterialPageRoute(builder: (context) => Categories()));
