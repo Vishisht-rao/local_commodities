@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:local_commodities/screens/home_customer/reusalbe/bottomnavbar.dart';
 import 'package:local_commodities/screens/home_delivery/checkout_pop_up.dart';
 import 'package:local_commodities/models/store.dart';
 import 'package:local_commodities/services/auth.dart';
@@ -18,7 +19,6 @@ class IndStore extends StatefulWidget {
 }
 
 class _IndStoreState extends State<IndStore> { 
-
   final AuthService _auth = AuthService();
 
   @override
@@ -84,7 +84,6 @@ class _IndStoreState extends State<IndStore> {
             )
           ],
         ),
-        
       ),
     ),
     );

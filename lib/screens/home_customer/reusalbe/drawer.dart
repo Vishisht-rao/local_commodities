@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:local_commodities/screens/home_customer/cart.dart';
 
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({Key key}) : super(key: key);
@@ -38,9 +39,9 @@ class DrawerMenu extends StatelessWidget {
                 ),
                 ListTile(
                   leading: Icon(Icons.settings),
-                  title: Text('Settings'),
+                  title: Text('cart'),
                   onTap: () {
-                    return null;
+                    return Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Cart()));
                   },
                 ),
                 ListTile(
