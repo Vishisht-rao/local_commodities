@@ -22,7 +22,7 @@ class DatabaseService {
     else if (uid=='h871KZrsCPeFrfrRAGi6aDcWZuh1') return 'Store2';
     else if (uid=='qC3J4J1knsVjzjwouQ5c8YqhpXw1') return 'Store3';
     else if (uid=='sGwRR2DhTVczhE5z1NUGpYep0x42') return 'Store6';
-    else if (uid=='x8CWi0qVhrc7qKscbZX7eZkeBib2') return 'Store8';
+    else return 'Store8';
   }
 
   Future addUserTypeandName(String userType, String name) async {

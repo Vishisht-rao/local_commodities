@@ -15,7 +15,7 @@ class StoreTile extends StatelessWidget {
         margin: EdgeInsets.fromLTRB(20.0,6.0,20.0,0.0),
         child: GestureDetector(
             onTap: () {
-              return Navigator.of(context).push(MaterialPageRoute(builder: (context) => IndStore()));
+              return Navigator.of(context).push(MaterialPageRoute(builder: (context) => IndStore(store: store)));
             },
             child: ListTile(
             leading: CircleAvatar(

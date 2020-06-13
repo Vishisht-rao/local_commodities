@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:local_commodities/screens/home_delivery/item.dart';
 
-void main() => runApp(MyApp());
+/*void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(),
     );
   }
-}
+}*/
 
 class MyHomePage extends StatefulWidget {
   @override

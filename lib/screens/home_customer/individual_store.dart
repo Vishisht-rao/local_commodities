@@ -1,19 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:local_commodities/models/store.dart';
 import 'package:local_commodities/services/auth.dart';
 import 'package:local_commodities/screens/home_customer/reusalbe/search.dart';
 import 'package:local_commodities/screens/home_customer/reusalbe/drawer.dart';
 import 'package:local_commodities/screens/home_customer/reusalbe/bottomnavbar.dart';
 
 class IndStore extends StatefulWidget {
-  IndStore({Key key}) : super(key: key);
+  final Store store;
+  IndStore({this.store});
 
   @override
   _IndStoreState createState() => _IndStoreState();
 }
 
 class _IndStoreState extends State<IndStore> { 
+
   final AuthService _auth = AuthService();
- @override
+
+ 
+  @override
   Widget build(BuildContext context) {
     final data=MediaQuery.of(context);
     return SafeArea(
@@ -28,7 +33,7 @@ class _IndStoreState extends State<IndStore> {
               expandedHeight: (data.size.height/7),
               backgroundColor: Colors.brown[400],
               elevation: 20,
-              title: Center(child: Text('Store name')),
+              title: Center(child: Text(widget.store.name)),
               flexibleSpace: FlexibleSpaceBar(
               background: Row(
               children: <Widget>[
@@ -64,6 +69,7 @@ class _IndStoreState extends State<IndStore> {
             ),
           ],
         ),
+        
         bottomNavigationBar: BottomBar(),
       ),
     );

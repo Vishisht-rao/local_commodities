@@ -11,7 +11,7 @@ import 'package:local_commodities/screens/home_customer/stores_list.dart';
 class HomeCustomer extends StatefulWidget {
   HomeCustomer({Key key}) : super(key: key);
 
-  @override
+  @override 
   _HomeCustomerState createState() => _HomeCustomerState(); 
 }
 
