@@ -26,12 +26,28 @@ class DatabaseService {
     });
   }
 
+  //stores list from snapshot
+  List<Store> _storesListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.documents.map((doc){
+      return Store(
+        name: doc.data['Name'] ?? '',
+        address: doc.data['Address'] ?? '',
+        imageLoc: doc.data['Image'] ?? '',
+      );
+    }).toList();
+  }
+
   Store _storeFromSnapshot(DocumentSnapshot snapshot) {
     return Store(
       name: snapshot.data['Name'],
       address: snapshot.data['Address'],
       imageLoc: snapshot.data['Image'],
     );
+  }
+
+  Stream<List<Store>> get shops {
+    return stores.snapshots()
+      .map(_storesListFromSnapshot);
   }
 
   Stream<Store> get store {
