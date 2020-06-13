@@ -12,7 +12,7 @@ class HomeCustomer extends StatefulWidget {
   HomeCustomer({Key key}) : super(key: key);
 
   @override
-  _HomeCustomerState createState() => _HomeCustomerState();
+  _HomeCustomerState createState() => _HomeCustomerState(); 
 }
 
 class _HomeCustomerState extends State<HomeCustomer> { 

@@ -11,6 +11,7 @@ class DatabaseService {
   //collection reference
   final CollectionReference users = Firestore.instance.collection('users');
   final CollectionReference stores = Firestore.instance.collection('stores');
+  final CollectionReference oldStores = Firestore.instance.collection('Stores');
 
   Future addUserTypeandName(String userType, String name) async {
     return await users.document(uid).setData({
@@ -39,6 +40,18 @@ class DatabaseService {
     });
   }
 
+  Future addAllItems(String name,double price, int type, String imageLoc, int counter, int qtyType, double spPrice) async {
+    return await stores.document(uid).collection('Items').document(name).setData({
+     'Name': name,
+    'Image': imageLoc,
+    'Price': price,
+    'Type': type,
+    'counter': counter,
+    'qty_type': qtyType,
+    'sp_price': spPrice, 
+    });
+  }
+
   //stores list from snapshot
   List<Store> _storesListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc){
@@ -59,6 +72,7 @@ class DatabaseService {
     );
   }
 
+
   Stream<List<Store>> get shops {
     return stores.snapshots()
       .map(_storesListFromSnapshot);
@@ -76,6 +90,25 @@ class DatabaseService {
   Stream<UserType> get userType {
     return users.document(uid).snapshots()
     .map(_userTypeFromSnapshot);
+  }
+
+  List<AllItems> _getAllItemsFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.documents.map((doc){
+    return AllItems(
+      name: doc.data['Name'],
+      imageLoc: doc.data['Image'],
+      price: doc.data['Price'],
+      type: doc.data['Type'],
+      counter: doc.data['counter'],
+      qtyType: doc.data['qty_type'],
+      spPrice: doc.data['sp_price'],
+    );
+    }).toList();
+  }
+
+  Stream<List<AllItems>> get allItems {
+    return oldStores.document('Store1').collection('Items').snapshots()
+    .map(_getAllItemsFromSnapshot);
   }
 
 } 

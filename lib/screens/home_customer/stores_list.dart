@@ -10,7 +10,7 @@ class StoreList extends StatefulWidget {
 
 class _StoreListState extends State<StoreList> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
 
     final listOfStores = Provider.of<List<Store>>(context) ?? [];
     
