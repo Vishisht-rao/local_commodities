@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:local_commodities/models/user.dart';
 import 'package:local_commodities/screens/home_customer/cart.dart';
+import 'package:local_commodities/models/store.dart';
+import 'package:provider/provider.dart';
 
 class DrawerMenu extends StatelessWidget {
-  const DrawerMenu({Key key}) : super(key: key);
+  final Store store;
+  const DrawerMenu({Key key,this.store}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       child: ListView(
               padding: EdgeInsets.zero,
-              children: <Widget>[
+              children: <Widget>[ 
 
                 DrawerHeader(
                   decoration: BoxDecoration(
@@ -41,7 +46,7 @@ class DrawerMenu extends StatelessWidget {
                   leading: Icon(Icons.settings),
                   title: Text('cart'),
                   onTap: () {
-                    return Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Cart()));
+                    return Navigator.of(context).push(MaterialPageRoute(builder: (context) =>Cart(store: store)));
                   },
                 ),
                 ListTile(

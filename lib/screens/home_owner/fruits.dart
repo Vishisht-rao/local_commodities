@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:local_commodities/models/item.dart';
-
+import 'package:provider/provider.dart';
 
 
 class MyHomePage extends StatefulWidget {
@@ -56,8 +56,9 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  
 
-  final List<Item> products = [
+  /*final List<Item> products = [
     Item(
       brand: 'FRESHO',
       name: 'Apple - Red Washington',
@@ -88,10 +89,13 @@ class _MyHomePageState extends State<MyHomePage> {
       price: 33,
       image:'asset/banana.jpg',
     ),
-  ];
+  ];*/
 
   @override
   Widget build(BuildContext context) {
+
+      final products = Provider.of<List<Item>>(context) ?? [];
+
     return Column(
           //mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -109,33 +113,16 @@ class _MyHomePageState extends State<MyHomePage> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text(
-                            it.brand,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.grey,
-                            ),
-                          ),
+                          SizedBox(height: 25.0,),
                           Text(it.name),
-                          Container(
-                            child: Column(
-                              children: <Widget>[
-                                DropdownButton(
-                                  value: _selectedWeight,
-                                  items: _dropdownMenuItems,
-                                  onChanged: onChangeDropdownItem,
-                                ),
-                                SizedBox(height: 10.0,),
-                                Text('Selected: ${_selectedWeight.wt}'),
-                              ],
-                            ),
-                          ),
+                          SizedBox(height: 30.0,),
                           Text(
                             'MRP: Rs ' + it.price.toString(),
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                             ),
                           ),
+                          SizedBox(height: 20.0,),
                         ],
                       ),
                     ],

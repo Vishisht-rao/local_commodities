@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:local_commodities/screens/home_customer/reusalbe/bottomnavbar.dart';
 import 'package:local_commodities/screens/home_delivery/checkout_pop_up.dart';
 import 'package:local_commodities/models/store.dart';
+import 'package:local_commodities/screens/home_owner/fruits.dart';
 import 'package:local_commodities/services/auth.dart';
 import 'package:local_commodities/screens/home_customer/reusalbe/search.dart';
 import 'package:local_commodities/screens/home_customer/reusalbe/drawer.dart';
@@ -29,7 +30,7 @@ class _IndStoreState extends State<IndStore> {
       value: DatabaseService(uid: widget.store.id).items,
     child: SafeArea(
           child: Scaffold(
-        drawer: Drawer(child: DrawerMenu()), 
+        drawer: Drawer(child: DrawerMenu(store: widget.store)), 
         body:CustomScrollView(
           physics: AlwaysScrollableScrollPhysics(),
           slivers: <Widget>[
@@ -77,9 +78,10 @@ class _IndStoreState extends State<IndStore> {
             SliverList(
             delegate: SliverChildBuilderDelegate(
                     (context, index) {
-                  final items = Provider.of<List<Item>>(context) ?? [];
-                  print(items[index]);
-                  return ItemTile(item: items[index]);
+                  final products = Provider.of<List<Item>>(context) ?? [];
+
+                  //print(items[index]);
+                  return ItemTile(item: products[index],store: widget.store);
                 },
                 childCount:products.length
             ),

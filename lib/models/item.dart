@@ -45,3 +45,17 @@ class Item {
     @required this.price,
     });
 }
+
+class CartModel {
+  final String image;
+  final String brand;
+  final String name;
+  final int price;
+
+  CartModel({
+    @required this.image,
+    @required this.brand,
+    @required this.name,
+    @required this.price,
+    });
+}
