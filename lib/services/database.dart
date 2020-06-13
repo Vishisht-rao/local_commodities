@@ -52,6 +52,22 @@ class DatabaseService {
     });
   }
 
+  List<Item> _itemListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.documents.map((doc){
+      return Item(
+        image: doc.data['Image'] ,
+        brand: doc.data['Brand']  ,
+        name: doc.data['Name']  ,
+        price: doc.data['Price']  ,
+      );
+    }).toList();
+  }
+
+
+  Stream<List<Item>> get items {
+    return stores.document(uid).collection('Items').snapshots()
+    .map(_itemListFromSnapshot);
+  }//here uid is actually store name becaue i am passing store name instead of uid
 
   //stores list from snapshot
   List<Store> _storesListFromSnapshot(QuerySnapshot snapshot) {
@@ -60,6 +76,7 @@ class DatabaseService {
         name: doc.data['Name'] ?? '',
         address: doc.data['Address'] ?? '',
         imageLoc: doc.data['Image'] ?? '',
+        id: getName(),
       );
     }).toList();
   }

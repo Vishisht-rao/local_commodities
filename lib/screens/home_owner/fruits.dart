@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:local_commodities/screens/home_delivery/item.dart';
+import 'package:local_commodities/models/item.dart';
 
 
 

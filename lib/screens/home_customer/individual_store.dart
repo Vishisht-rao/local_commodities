@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:local_commodities/screens/home_customer/items_list.dart';
 import 'package:local_commodities/screens/home_delivery/checkout_pop_up.dart';
 import 'package:local_commodities/models/store.dart';
 import 'package:local_commodities/services/auth.dart';
 import 'package:local_commodities/screens/home_customer/reusalbe/search.dart';
 import 'package:local_commodities/screens/home_customer/reusalbe/drawer.dart';
 import 'package:local_commodities/screens/home_owner/fruits.dart';
+import 'package:local_commodities/services/database.dart';
+import 'package:local_commodities/models/item.dart';
+import 'package:provider/provider.dart';
 
 class IndStore extends StatefulWidget {
   final Store store;
@@ -22,7 +26,9 @@ class _IndStoreState extends State<IndStore> {
   @override
   Widget build(BuildContext context) {
     final data=MediaQuery.of(context);
-    return SafeArea(
+    return StreamProvider<List<Item>>.value(
+      value: DatabaseService(uid: widget.store.id).items,
+    child: SafeArea(
           child: Scaffold(
         drawer: Drawer(child: DrawerMenu()), 
         body:CustomScrollView(
@@ -71,7 +77,7 @@ class _IndStoreState extends State<IndStore> {
             SliverList(
             delegate: SliverChildBuilderDelegate(
                     (context, index) {
-                  return MyHomePage();
+                  return ItemList();
                 },
                 childCount:products.length
             ),
@@ -80,6 +86,7 @@ class _IndStoreState extends State<IndStore> {
         ),
         
       ),
+    ),
     );
   }
 }

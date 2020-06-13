@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 //import 'package:rflutter_alert/rflutter_alert.dart';
-import './item.dart';
+import 'package:local_commodities/models/item.dart';
 
 void main() => runApp(MyApp());
 

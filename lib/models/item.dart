@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 class ItemData {
 
   final String name;
@@ -26,4 +28,20 @@ class AllItems {
   AllItems({this.name,this.imageLoc,this.price,this.type,this.counter,this.qtyType,this.spPrice});
 
 
+}
+
+
+
+class Item {
+  final String image;
+  final String brand;
+  final String name;
+  final int price;
+
+  Item({
+    @required this.image,
+    @required this.brand,
+    @required this.name,
+    @required this.price,
+    });
 }
