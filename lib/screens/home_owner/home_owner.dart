@@ -55,11 +55,62 @@ class _HomeOwnerState extends State<HomeOwner> {
           )
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        tooltip: 'Add Item',
-        child: const Icon(Icons.add),
-        onPressed: () => _showAddItemsPanel(),
-      ),
+      body: Container(child:
+      Column(
+        children: <Widget>[
+          SizedBox(height:100),
+        Padding(
+          padding: EdgeInsets.fromLTRB(80,0,80,0),
+          child: RaisedButton(
+            onPressed:() {
+              return _showAddItemsPanel();
+            },
+          child: Center(child:Text('Add Items',style:TextStyle(color:Colors.white),),),
+          elevation:20,
+          color: Colors.brown[400],
+          splashColor: Colors.redAccent,
+          ),
+        ),
+        SizedBox(height: 30,),
+        Padding(
+          padding: EdgeInsets.fromLTRB(80,0,80,0),
+          child: RaisedButton(
+            onPressed:() {
+              return null;
+            },
+          child: Center(child:Text('Remove Items',style:TextStyle(color:Colors.white),),),
+          elevation:20,
+          color: Colors.brown[400],
+          splashColor: Colors.redAccent,
+          ),
+        ),
+        SizedBox(height: 30,),
+        Padding(
+          padding: EdgeInsets.fromLTRB(80,0,80,0),
+          child: RaisedButton(
+            onPressed:() {
+              return null;
+            },
+          child: Center(child:Text('Change Items',style:TextStyle(color:Colors.white),),),
+          elevation:20,
+          color: Colors.brown[400],
+          splashColor: Colors.redAccent,
+          ),
+        ),
+        SizedBox(height: 30,),
+        Padding(
+          padding: EdgeInsets.fromLTRB(80,0,80,0),
+          child: RaisedButton(
+            onPressed:() {
+              return null;
+            },
+          child: Center(child:Text('View Orders',style:TextStyle(color:Colors.white),),),
+          elevation:20,
+          color: Colors.brown[400],
+          splashColor: Colors.redAccent,
+          ),
+        )
+                ],)),
       );
       
   }
