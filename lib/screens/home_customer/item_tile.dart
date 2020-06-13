@@ -17,7 +17,7 @@ class ItemTile extends StatelessWidget {
 
     final user = Provider.of<User>(context);
 
-  
+    String imageLoc = 'Groceries/' + item.image;
     return Padding(
       padding: EdgeInsets.only(top: 8.0),
       child: Card(
@@ -30,6 +30,7 @@ class ItemTile extends StatelessWidget {
           leading: CircleAvatar(
             radius: 25.0,
             backgroundColor: Colors.brown,
+            backgroundImage: AssetImage(imageLoc),
           ),
           title: Text(item.name),
           subtitle: Text('Rs.' + item.price.toString()),
