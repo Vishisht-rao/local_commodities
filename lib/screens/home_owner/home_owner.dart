@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:local_commodities/screens/home_owner/edit_items.dart';
 import 'package:local_commodities/services/auth.dart';
 import 'package:local_commodities/screens/home_owner/owner_settings.dart';
+import 'package:local_commodities/screens/home_owner/add_items.dart';
 
 class HomeOwner extends StatefulWidget {
   @override
@@ -23,6 +24,16 @@ class _HomeOwnerState extends State<HomeOwner> {
         );
       });
     } 
+
+    void _showAddItemsPanel() {
+      showModalBottomSheet(context: context, builder: (context) {
+        return Container(
+          padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 60.0),
+          child: AddItemsForm(),
+        );
+      });
+    }
+
 
     return Scaffold
       (backgroundColor: Colors.brown[50],
@@ -48,7 +59,7 @@ class _HomeOwnerState extends State<HomeOwner> {
       floatingActionButton: FloatingActionButton(
         tooltip: 'Add Item',
         child: const Icon(Icons.add),
-        onPressed: () {return EditItems();},
+        onPressed: () => _showAddItemsPanel(),
       ),
       );
       
