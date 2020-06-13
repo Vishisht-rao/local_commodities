@@ -53,13 +53,31 @@ class DatabaseService {
     });
   }
 
-  Future addToCart(String name, double price, String image) async {
-    return await cart.document(uid).collection('Items').document(name).setData({
+  Future addToCart(String name, double price, String image,String storeName) async {
+    return await cart.document(uid + storeName).collection('Items').document(name).setData({
       'Name': name,
       'Price': price,
       'Image': image,
     });
   }
+
+  List<CartModel> _cartListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.documents.map((doc){
+      return CartModel(
+        image: doc.data['Image'] ,
+        brand: doc.data['Brand']  ,
+        name: doc.data['Name']  ,
+        price: doc.data['Price']
+    );
+    }).toList();
+  }
+
+   Stream<List<CartModel>> get cartItems {
+    return cart.document(uid).collection('Items').snapshots()
+    .map(_cartListFromSnapshot);
+  }//here uid is actually uid of customer plus store name becaue i am passing that instead of uid
+
+
 
   List<Item> _itemListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc){

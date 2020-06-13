@@ -29,7 +29,7 @@ class _IndStoreState extends State<IndStore> {
       value: DatabaseService(uid: widget.store.id).items,
     child: SafeArea(
           child: Scaffold(
-        drawer: Drawer(child: DrawerMenu()), 
+        drawer: Drawer(child: DrawerMenu(store: widget.store)), 
         body:CustomScrollView(
           physics: AlwaysScrollableScrollPhysics(),
           slivers: <Widget>[
@@ -79,7 +79,7 @@ class _IndStoreState extends State<IndStore> {
                   final products = Provider.of<List<Item>>(context) ?? [];
 
                   //print(items[index]);
-                  return ItemTile(item: products[index]);
+                  return ItemTile(item: products[index],store: widget.store);
                 },
                 childCount:products.length
             ),
