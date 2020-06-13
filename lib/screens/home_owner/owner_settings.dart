@@ -19,7 +19,7 @@ class _SettingsFormState extends State<SettingsForm> {
   String _currentName;
   String _currentAddress;
 
-
+ 
   @override
   Widget build(BuildContext context) {
 

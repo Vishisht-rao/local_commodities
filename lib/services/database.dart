@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:local_commodities/models/item.dart';
 import 'package:local_commodities/models/user.dart';
 import 'package:local_commodities/models/store.dart';
 
@@ -26,6 +27,18 @@ class DatabaseService {
     });
   }
 
+  Future addItemData(String name, String price, String type) async {
+    return await stores.document(uid).collection('Items').document(name).setData({  
+    'Name': name,
+    'Image': name + '.jpg',
+    'Price': price,
+    'Type': type,
+    'counter': 0,
+    'qty_type': 3,
+    'sp_price': 0,
+    });
+  }
+
   //stores list from snapshot
   List<Store> _storesListFromSnapshot(QuerySnapshot snapshot) {
     return snapshot.documents.map((doc){
@@ -36,6 +49,7 @@ class DatabaseService {
       );
     }).toList();
   }
+
 
   Store _storeFromSnapshot(DocumentSnapshot snapshot) {
     return Store(

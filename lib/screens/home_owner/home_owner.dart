@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:local_commodities/screens/home_owner/edit_items.dart';
 import 'package:local_commodities/services/auth.dart';
 import 'package:local_commodities/screens/home_owner/owner_settings.dart';
 
@@ -21,7 +22,7 @@ class _HomeOwnerState extends State<HomeOwner> {
           child: SettingsForm(),
         );
       });
-    }
+    } 
 
     return Scaffold
       (backgroundColor: Colors.brown[50],
@@ -44,7 +45,13 @@ class _HomeOwnerState extends State<HomeOwner> {
           )
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        tooltip: 'Add Item',
+        child: const Icon(Icons.add),
+        onPressed: () {return EditItems();},
+      ),
       );
+      
   }
 }
 
