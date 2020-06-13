@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:local_commodities/screens/authenticate/authenticate.dart';
 import 'package:local_commodities/screens/home_customer/home_customer.dart';
-import 'package:local_commodities/screens/home_delivery/home_delivery.dart';
 import 'package:local_commodities/screens/home_owner/home_owner.dart';
 import 'package:local_commodities/services/database.dart';
 import 'package:local_commodities/shared/loading.dart';
@@ -33,9 +32,7 @@ class _WrapperState extends State<Wrapper> {
           return HomeCustomer();}
           else if (userType.userType == 'Store Owner') {
             return HomeOwner();}
-            else {
-              return HomeDelivery();
-            }
+  
         }
         
         else {
