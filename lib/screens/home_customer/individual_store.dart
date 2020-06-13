@@ -9,6 +9,7 @@ import 'package:local_commodities/services/database.dart';
 import 'package:local_commodities/models/item.dart';
 import 'package:provider/provider.dart';
 import 'package:local_commodities/screens/home_customer/item_tile.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class IndStore extends StatefulWidget {
   final Store store;
@@ -65,6 +66,7 @@ class _IndStoreState extends State<IndStore> {
                 child: FlatButton.icon(
                 onPressed: () async {
                   await _auth.signOut();
+                  
                   },
                 icon: Icon(Icons.person),
                 label: Text('Logout', style: TextStyle(fontSize:16, fontWeight: FontWeight.bold)),textColor: Colors.white,
@@ -84,6 +86,7 @@ class _IndStoreState extends State<IndStore> {
             )
           ],
         ),
+        bottomNavigationBar: BottomBar(),
       ),
     ),
     );

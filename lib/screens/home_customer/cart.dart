@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:local_commodities/screens/home_customer/reusalbe/drawer.dart';
+import 'package:local_commodities/screens/home_customer/reusalbe/bottomnavbar.dart';
 
 class Cart extends StatefulWidget {
   @override
@@ -32,6 +33,7 @@ class _CartState extends State<Cart> {
         drawer: Drawer(
             child:DrawerMenu()
         ),
+        bottomNavigationBar: BottomBar(),
       ),
     );
   }
