@@ -13,6 +13,7 @@ class IndStore extends StatefulWidget {
 
 class _IndStoreState extends State<IndStore> { 
   final AuthService _auth = AuthService();
+  int currentindex=0;
  @override
   Widget build(BuildContext context) {
     final data=MediaQuery.of(context);
@@ -64,7 +65,6 @@ class _IndStoreState extends State<IndStore> {
             ),
           ],
         ),
-        bottomNavigationBar: BottomBar(),
       ),
     );
   }

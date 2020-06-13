@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:local_commodities/models/store.dart';
-import 'package:local_commodities/screens/home_customer/individual_store.dart';
+import 'package:local_commodities/screens/home_customer/reusalbe/bottomnavbar.dart';
 
 class StoreTile extends StatelessWidget {
 
@@ -15,7 +15,7 @@ class StoreTile extends StatelessWidget {
         margin: EdgeInsets.fromLTRB(20.0,6.0,20.0,0.0),
         child: GestureDetector(
             onTap: () {
-              return Navigator.of(context).push(MaterialPageRoute(builder: (context) => IndStore()));
+              return Navigator.of(context).push(MaterialPageRoute(builder: (context) => BottomBar()));
             },
             child: ListTile(
             leading: CircleAvatar(
