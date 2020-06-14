@@ -22,6 +22,7 @@ bool loading = false;
 
 String _currentUserType;
 String _currentName;
+String _currentNum;
 
 //text field state
   String email = '';
@@ -68,6 +69,12 @@ String _currentName;
                     decoration: textInputDecoration.copyWith(hintText: 'Name'),
                     validator: (val) => val.isEmpty ? 'Enter your name' : null,
                     onChanged: (val) => setState(() => _currentName = val),
+                  ),
+                  SizedBox(height: 20.0),
+                  TextFormField(
+                    decoration: textInputDecoration.copyWith(hintText: 'Phone Number'),
+                    validator: (val) => val.isEmpty ? 'Enter your phone number' : null,
+                    onChanged: (val) => setState(() => _currentNum = val),
                   ),
                   SizedBox(height: 20.0),
                   TextFormField(

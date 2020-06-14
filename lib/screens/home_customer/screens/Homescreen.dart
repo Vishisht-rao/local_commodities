@@ -6,6 +6,7 @@ import 'package:local_commodities/screens/authenticate/sign_in.dart';
 import 'package:local_commodities/screens/home_customer/screens/Search.dart';
 import 'package:local_commodities/screens/home_customer/Objects/Items.dart';
 import 'package:local_commodities/screens/home_customer/Objects/reusable.dart';
+import 'package:local_commodities/services/auth.dart';
 
 class Homescreen extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
-
+ final AuthService _auth = AuthService();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +24,7 @@ class _HomescreenState extends State<Homescreen> {
           SliverAppBar(
             pinned: false,
             floating: true,
-            expandedHeight: 110,
+            expandedHeight:110,
             backgroundColor: Colors.green,
             elevation: 20,
             titleSpacing:0,
@@ -35,9 +36,10 @@ class _HomescreenState extends State<Homescreen> {
                         child: Search()
                     ),
                     Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 120, 3, 0),
+                        padding: EdgeInsets.fromLTRB(5,120, 5, 0),
                         child: FlatButton.icon(
-                          onPressed: () {
+                          onPressed: () async {
+                            await _auth.signOut();                        
                             return Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => SignIn()));
               

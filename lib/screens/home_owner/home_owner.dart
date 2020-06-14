@@ -32,6 +32,9 @@ class _HomeOwnerState extends State<HomeOwner> {
         );
       });
     }
+    Widget showOrdersPanel() {
+      
+    }
 
 
     return Scaffold
@@ -102,7 +105,7 @@ class _HomeOwnerState extends State<HomeOwner> {
           padding: EdgeInsets.fromLTRB(80,0,80,0),
           child: RaisedButton(
             onPressed:() {
-              return null;
+              return showOrdersPanel();
             },
           child: Center(child:Text('View Orders',style:TextStyle(color:Colors.white),),),
           elevation:20,

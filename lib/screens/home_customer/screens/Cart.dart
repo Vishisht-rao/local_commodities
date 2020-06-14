@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:local_commodities/screens/home_customer/Drawer/Drawer.dart';
 import 'package:local_commodities/screens/authenticate/sign_in.dart';
 import 'package:local_commodities/screens/home_customer/Objects/items.dart';
+import 'package:local_commodities/screens/home_customer/screens/address.dart';
 
 
 class Cart extends StatefulWidget {
@@ -117,7 +118,9 @@ class _CartState extends State<Cart> {
           height:50,
           padding: EdgeInsets.fromLTRB(30, 0, 0, 0),
           child: FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+               return openAlert();
+            },
             backgroundColor: Colors.green,
             shape:RoundedRectangleBorder(borderRadius: new BorderRadius.circular(10)),
             child: Center(child:Text('Checkout',style:TextStyle(fontSize: 20,fontWeight:FontWeight.bold))),
@@ -126,4 +129,58 @@ class _CartState extends State<Cart> {
       ),
     );
   }
+  Future<void> openAlert() async{
+  return  showDialog(
+    context: context,
+    barrierDismissible: true,
+    builder: (BuildContext context){
+      return AlertDialog(
+        title: Text('Cart Items '),
+        content: Container(
+          height: 200.0,
+          width: 300.0,
+          child: SingleChildScrollView(
+            child : Column(
+              children: <Widget>[
+                Column(
+                  children: cart.map((it){
+                    return Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          
+                            Container(width: 150.0,child: Text(it['name'],style: TextStyle(fontSize: 14.0),)),
+                            Container(child: Text('x'+it['counter'].toString(),style: TextStyle(fontSize: 14.0),)),
+                            Container(width: 40.0,child: Text('₹'+it['price'].toString(),style: TextStyle(fontSize: 14.0),)),
+
+                        ],
+                      ),
+                    );
+                  }).toList(),
+                ),
+              ],
+            ),
+          ),
+        ),
+        actions: <Widget>[
+                FlatButton(
+                  color: Colors.green,
+                  child: Text('Back To Cart',style: TextStyle(color: Colors.white),),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+                FlatButton(
+                  color: Colors.green,
+                  child: Text('Proceed to Checkout',style: TextStyle(color: Colors.white),),
+                  onPressed: () {
+                    return Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => Address()));
+                  },
+                ),
+        ],
+      );
+    }
+  );
+}
 }
