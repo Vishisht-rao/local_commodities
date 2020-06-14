@@ -33,7 +33,44 @@ class _HomeOwnerState extends State<HomeOwner> {
       });
     }
     Widget showOrdersPanel() {
-      
+      showModalBottomSheet(context: context, builder: (context) {
+        return Column(
+          children: <Widget>[
+            Text('Previous Orders',style:TextStyle(fontSize: 40,fontWeight: FontWeight.bold,color: Colors.green)),
+            SizedBox(height:30),
+       Card(
+        margin: EdgeInsets.fromLTRB(20.0,6.0,20.0,0.0),
+        child: GestureDetector(
+            onTap: () {},
+            child: ListTile(
+            leading: CircleAvatar(
+              radius: 25.0,
+              backgroundColor: Colors.green,
+            ),
+            title: Text('Vishisht Sri Hari Rao'),
+            subtitle: Text('98876547283'),
+          ),
+        )
+      ),
+       SizedBox(height:15),
+       Card(
+        margin: EdgeInsets.fromLTRB(20.0,6.0,20.0,0.0),
+        child: GestureDetector(
+            onTap: () {},
+            child: ListTile(
+            leading: CircleAvatar(
+              radius: 25.0,
+              backgroundColor: Colors.green,
+            ),
+            title: Text('Raghav T Kesari'),
+            subtitle: Text('98673232683'),
+          ),
+        )
+      ),
+          ],
+
+        );
+      });
     }
 
 
@@ -41,7 +78,7 @@ class _HomeOwnerState extends State<HomeOwner> {
       (backgroundColor: Colors.brown[50],
       appBar: AppBar(
         title: Text('Home Owner'),
-        backgroundColor: Colors.brown[400],
+        backgroundColor: Colors.green,
         elevation: 0.0,
         actions: <Widget>[
           FlatButton.icon(
@@ -70,7 +107,7 @@ class _HomeOwnerState extends State<HomeOwner> {
             },
           child: Center(child:Text('Add Items',style:TextStyle(color:Colors.white),),),
           elevation:20,
-          color: Colors.brown[400],
+          color: Colors.green,
           splashColor: Colors.redAccent,
           ),
         ),
@@ -83,7 +120,7 @@ class _HomeOwnerState extends State<HomeOwner> {
             },
           child: Center(child:Text('Remove Items',style:TextStyle(color:Colors.white),),),
           elevation:20,
-          color: Colors.brown[400],
+          color: Colors.green,
           splashColor: Colors.redAccent,
           ),
         ),
@@ -96,7 +133,7 @@ class _HomeOwnerState extends State<HomeOwner> {
             },
           child: Center(child:Text('Change Items',style:TextStyle(color:Colors.white),),),
           elevation:20,
-          color: Colors.brown[400],
+          color: Colors.green,
           splashColor: Colors.redAccent,
           ),
         ),
@@ -109,7 +146,7 @@ class _HomeOwnerState extends State<HomeOwner> {
             },
           child: Center(child:Text('View Orders',style:TextStyle(color:Colors.white),),),
           elevation:20,
-          color: Colors.brown[400],
+          color: Colors.green,
           splashColor: Colors.redAccent,
           ),
         )

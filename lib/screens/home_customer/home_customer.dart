@@ -25,7 +25,7 @@ class _HomeCustomerState extends State<HomeCustomer> {
       (backgroundColor: Colors.brown[50],
       appBar: AppBar(
         title: Text('Home Customer'),
-        backgroundColor: Colors.brown[400],
+        backgroundColor: Colors.green,
         elevation: 0.0,
         actions: <Widget>[
           FlatButton.icon(

@@ -24,7 +24,7 @@ class StoreTile extends StatelessWidget {
             child: ListTile(
             leading: CircleAvatar(
               radius: 25.0,
-              backgroundColor: Colors.brown[400],
+              backgroundColor: Colors.green,
               backgroundImage: AssetImage(imageLoc),
             ),
             title: Text(store.name),
