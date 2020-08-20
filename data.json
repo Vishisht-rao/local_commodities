@@ -1,0 +1,317 @@
+{
+  "I001": {
+    "Type": 1,
+    "Name": "Apples",
+    "Image": "Apples.jpg",
+    "Price": 25,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I002": {
+    "Type": 1,
+    "Name": "Bananas",
+    "Image": "Bananas.jpg",
+    "Price": 10,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I003": {
+    "Type": 1,
+    "Name": "Mango",
+    "Image": "Mango.jpg",
+    "Price": 20,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I004": {
+    "Type": 1,
+    "Name": "Papaya",
+    "Image": "Papaya.jpg",
+    "Price": 6,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I005": {
+    "Type": 1,
+    "Name": "Orange",
+    "Image": "Orange.jpg",
+    "Price": 15,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I006": {
+    "Type": 1,
+    "Name": "Pineapple",
+    "Image": "Pineapple.jpg",
+    "Price": 25,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 1
+  },
+  "I007": {
+    "Type": 1,
+    "Name": "Sapota",
+    "Image": "Sapota.jpg",
+    "Price": 15,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I008": {
+    "Type": 2,
+    "Name": "Potato",
+    "Image": "Potato.jpg",
+    "Price": 30,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I009": {
+    "Type": 2,
+    "Name": "Onion",
+    "Image": "Onion.jpg",
+    "Price": 8,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I010": {
+    "Type": 2,
+    "Name": "Tomato",
+    "Image": "Tomato.jpg",
+    "Price": 7,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I011": {
+    "Type": 2,
+    "Name": "Spinach",
+    "Image": "Spinach.jpg",
+    "Price": 10,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I012": {
+    "Type": 2,
+    "Name": "Beans",
+    "Image": "Beans.jpg",
+    "Price": 10,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I013": {
+    "Type": 2,
+    "Name": "Capsicum",
+    "Image": "Capsicum.jpg",
+    "Price": 5,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I014": {
+    "Type": 3,
+    "Name": "Milk",
+    "Image": "Milk.jpg",
+    "Price": 40,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I015": {
+    "Type": 3,
+    "Name": "Butter",
+    "Image": "Butter.jpg",
+    "Price": 110,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I016": {
+    "Type": 3,
+    "Name": "Ghee",
+    "Image": "Ghee.jpg",
+    "Price": 150,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I017": {
+    "Type": 3,
+    "Name": "Paneer",
+    "Image": "Paneer.jpg",
+    "Price": 110,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I018": {
+    "Type": 3,
+    "Name": "Curd",
+    "Image": "Curd.jpg",
+    "Price": 45,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I019": {
+    "Type": 3,
+    "Name": "Cheese",
+    "Image": "Cheese.jpg",
+    "Price": 150,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I020": {
+    "Type": 4,
+    "Name": "Lays",
+    "Image": "Lays.jpg",
+    "Price": 20,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 1
+  },
+  "I021": {
+    "Type": 4,
+    "Name": "Bingo",
+    "Image": "Bingo.jpg",
+    "Price": 20,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 1
+  },
+  "I022": {
+    "Type": 4,
+    "Name": "Maggi",
+    "Image": "Maggi.jpg",
+    "Price": 40,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 1
+  },
+  "I023": {
+    "Type": 4,
+    "Name": "Tea",
+    "Image": "Tea.jpg",
+    "Price": 110,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 1
+  },
+  "I024": {
+    "Type": 4,
+    "Name": "Ketchup",
+    "Image": "Ketchup.jpg",
+    "Price": 150,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 1
+  },
+  "I025": {
+    "Type": 4,
+    "Name": "Bread",
+    "Image": "Bread.jpg",
+    "Price": 40,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 1
+  },
+  "I026": {
+    "Type": 5,
+    "Name": "Rice",
+    "Image": "Rice.jpg",
+    "Price": 12,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I027": {
+    "Type": 5,
+    "Name": "Atta",
+    "Image": "Atta.jpg",
+    "Price": 15,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I028": {
+    "Type": 5,
+    "Name": "Sugar",
+    "Image": "Sugar.jpg",
+    "Price": 10,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I029": {
+    "Type": 5,
+    "Name": "Oil",
+    "Image": "Oil.jpg",
+    "Price": 110,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 3
+  },
+  "I030": {
+    "Type": 6,
+    "Name": "Toilet-Paper",
+    "Image": "Toilet-Paper.jpg",
+    "Price": 40,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 1
+  },
+  "I031": {
+    "Type": 6,
+    "Name": "Toothbrush",
+    "Image": "Toothbrush.jpg",
+    "Price": 20,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 1
+  },
+  "I032": {
+    "Type": 6,
+    "Name": "Toothpaste",
+    "Image": "Toothpaste.jpg",
+    "Price": 100,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 1
+  },
+  "I033": {
+    "Type": 6,
+    "Name": "Soap",
+    "Image": "Soap.jpg",
+    "Price": 30,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 1
+  },
+  "I034": {
+    "Type": 6,
+    "Name": "Handwash",
+    "Image": "Handwash.jpg",
+    "Price": 80,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 1
+  },
+  "I035": {
+    "Type": 6,
+    "Name": "Shampoo",
+    "Image": "Shampoo.jpg",
+    "Price": 200,
+    "sp_price": 0,
+    "counter": 0,
+    "qty_type": 1
+  }
+}
